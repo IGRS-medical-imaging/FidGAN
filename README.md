@@ -2,7 +2,7 @@
 
 <p  align="center">  
   
-Accurately localizing and detecting fiducials is critical for image-guided spine surgery (IGSS) to precisely guide surgical tools relative to the patient’s anatomy. However, challenges such as imaging modality limitations or occlusions can hinder fiducial detection, compromising instrument positioning accuracy. In this study, we propose FidGAN, a novel approach tailored for predicting undetected fiducials in C-Arm fluoroscopic images used in IGSS. FidGAN incorporates unique features like additional layer connections, style loss in the generator, customized patch sizes, and random noise to enhance fiducial prediction. Experimental results highlight FidGAN's effectiveness in predicting missing fiducials, demonstrating superior prediction accuracy.
+Accurately localizing and detecting fiducials is critical for `image-guided spine surgery (IGSS)` to precisely guide surgical tools relative to the patient’s anatomy. However, challenges such as imaging modality limitations or occlusions can hinder fiducial detection, compromising instrument positioning accuracy. In this study, we propose FidGAN, a novel approach tailored for `predicting undetected fiducials` in C-Arm fluoroscopic images used in IGSS. FidGAN incorporates unique features like additional layer connections, style loss in the generator, customized patch sizes, and random noise to enhance fiducial prediction. Experimental results highlight FidGAN's effectiveness in predicting missing fiducials, demonstrating `superior prediction accuracy`.
 </p>
 
 <h3 > <i>Index Terms</i> </h3> 
@@ -72,7 +72,7 @@ X-ray images. We began with images that included all required fiducials. This wa
 </p>
 <div align = "center">
   
-  :small_orange_diamond: Fig 4:Detection of Missing Fiducials
+  :small_orange_diamond: Fig 1:Detection of Missing Fiducials
 </div>
 </details>
 
@@ -83,7 +83,7 @@ X-ray images. We began with images that included all required fiducials. This wa
 </p>
 <div align = "center">
   
-  :small_orange_diamond: Fig 4:Block diagram of FidGAN Training
+  :small_orange_diamond: Fig 2:Block diagram of FidGAN Training
 </div>
 
 
