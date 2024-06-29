@@ -1,15 +1,17 @@
-<h1 align="center">.......</h1>
+<h1 align="center">FidGAN: A Fiducial Prediction Based GAN for Image Guided Spine Surgery</h1>
 
 <p  align="center">  
   
- Precise viewing of the calibrator with `17 fiducial markers` is crucial in image-guided spine surgery (IGSS) for accurate tool guidance. However, C-arm x-ray imaging often obstructs these markers, complicating the procedure. Incorrect depiction can lead to mispositioning of instruments, increasing surgical risks and complications. This research introduces `FidGAN`, a Generative Adversarial Network (GAN) designed to detect occluded fiducials. FidGAN can accurately identify and fill in missing fiducials in images. Studies show that FidGAN effectively correlates missing fiducials with `high accuracy`. The synthetic images created by FidGAN, which include all fiducials, prove useful in real-world applications, enhancing segmentation tasks.
+Accurately localizing and detecting fiducials is critical for image-guided spine surgery (IGSS) to precisely guide surgical tools relative to the patient’s anatomy. However, challenges such as imaging modality limitations or occlusions can hinder fiducial detection, compromising instrument positioning accuracy. In this study, we propose FidGAN, a novel approach tailored for predicting undetected fiducials in C-Arm fluoroscopic images used in IGSS. FidGAN incorporates unique features like additional layer connections, style loss in the generator, customized patch sizes, and random noise to enhance fiducial prediction. Experimental results highlight FidGAN's effectiveness in predicting missing fiducials, demonstrating superior prediction accuracy.
 </p>
 
 <h3 > <i>Index Terms</i> </h3> 
 
- :diamond_shape_with_a_dot_inside:....
-  :diamond_shape_with_a_dot_inside: ....
-  :diamond_shape_with_a_dot_inside:....
+ :diamond_shape_with_a_dot_inside:Image Guided Surgery
+  :diamond_shape_with_a_dot_inside:Fiducials Prediction
+  :diamond_shape_with_a_dot_inside:GAN
+  :diamond_shape_with_a_dot_inside:Deep Learning
+  
 
 </div>
 
@@ -23,7 +25,9 @@
 
 - **Architecture:**:FidGAN adopts an `altered U-Net` like structure, effective for image generation and transformation tasks.
 
-- **Encoder-Decoder:**:</ln> It includes downsampling and upsampling pathways with skip connections to preserve spatial details and high-level features.
+- **Encoder-Decoder:**:</ln> The proposed U-Net architecture is tailored for generating images from occluded
+fiducial point input images. Incorporates feature extraction connections, or skip connections, within the encoder, where features from the first layer, downsampled to [1, 64, 128, 128], to enhancing the extraction of detailed features like edges and textures. Edges are crucial for delineating the boundaries of fiducial points, outlining specific
+points, while textures help distinguish between different fiducials based on the calibration drum plates.
 
 - **Input and Output**: Takes an input image with `occluded fiducials` and outputs a reconstructed image with `predicted fiducials`.
 <br/>
@@ -37,7 +41,8 @@
   
 - **L1 Loss**: Promotes pixel-wise similarity between generated and real images
   
-- **Style Loss**:Encourages the generator to replicate textures and styles from the target image.
+- **Style Loss**:Encourages the generator to facilitates the production of images that closely resemble
+the target images.VGG19 helps ensure that the fiducial points in the generated image are arranged in a circular format, similar to the ground truth without occlusion. By extracting high-level perceptual features from both the ground truth image and the generated image.
   
 - **Optimization**: Adam optimizer adjusts parameters to minimize losses and enhance image quality.
   </details>
@@ -46,7 +51,8 @@
 <summary><i>Dataset and Preprocessing</i></summary>
 
 
-- **Dataset Preparation**: Utilizes Minimum-Size Elliptical Region (MSER) technique to extract fiducial coordinates and generate a diverse dataset.
+- **Dataset Preparation**: The calibration fiducial markers in the dataset were obtained using
+X-ray images. We began with images that included all required fiducials. This was achieved by randomly eliminating certain fiducials from each original image and then merging these altered images with the originals.
   
 - **Image Generation:** Synthetic images are created by randomly occluding fiducials from original images, simulating real-world occlusion scenarios.
 
@@ -57,9 +63,9 @@
 <summary><i>Evaluation Metrics</i></summary>
 
   
-- **Performance Comparison**:FidGAN is compared with other GAN variants (CycleGAN, StarGAN, DCGAN) using metrics like PSNR, SSIM, MSE, MAE, and Root Mean Squared Error (RMSE).
+- **Performance Comparison**:FidGAN is compared with other GAN variants (CycleGAN, StarGAN, DCGAN) using metrics like PSNR, SSIM, MSE, MAE, and GTCE(Groundtruth Calbration Error).
   
-- **Accuracy**: Achieves lower RMSE and higher PSNR, SSIM compared to other GANs, indicating superior fidelity in predicting fiducials.
+- **Accuracy**: Achieves lower GTCE and higher PSNR, SSIM compared to other GANs, indicating superior fidelity in predicting fiducials.
   
   <p align="center">
   <img src="Figures/Image 2.jpg">
