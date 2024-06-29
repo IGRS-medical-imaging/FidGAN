@@ -86,12 +86,31 @@ X-ray images. We began with images that included all required fiducials. This wa
   :small_orange_diamond: Fig 4:Block diagram of FidGAN Training
 </div>
 
+
 ## <div align="center">Pre-requisites</div>
 Before installing and running the project, ensure you have the following prerequisites:
 
  :grey_exclamation: Download and install Jupyter Notebook from the `Jupyter website`.
  
  :wavy_dash: The version for this project is **Jupyter Notebook 6.0.3**.
+ 
+ :grey_exclamation: Pix2Pix
+
+:wavy_dash: `Pix2Pix` is required for the project.
+
+To includethe above repository in your project, follow these steps:
+
+1. Download from the official [ML GANs GitHub repository](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/Pix2Pix):
+
+    ```bash
+    git clone https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/Pix2Pix
+    cd Machine-Learning-Collection/ML/Pytorch/GANs/Pix2Pix
+    
+    ```
+
+2. Extract the contents to a directory on your system if you downloaded a compressed file. If you cloned the repository, you can skip this step.
+
+3. Include the directory in your project's include path. 
 
 ## <div align="center">Installation</div>
 :arrow_right:Clone the Repository
