@@ -67,7 +67,7 @@ X-ray images. We began with images that included all required fiducials. This wa
 - **Accuracy**: Achieves lower GTCE and higher PSNR, SSIM compared to other GANs, indicating superior fidelity in predicting fiducials.
   
   <p align="center">
-  <img src="Images/Encoder decoder.png">
+  <img src="d25.drawio (1).png">
 </p>
 <div align = "center">
   
