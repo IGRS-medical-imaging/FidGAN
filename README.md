@@ -78,7 +78,7 @@ X-ray images. We began with images that included all required fiducials. This wa
 ## <div align="center">Methodology</div>
 
 <p align="center">
-  <img src="Images/Block diagram.png">
+  <img src="Images/b1.drawio (1).png">
 </p>
 <div align = "center">
   
